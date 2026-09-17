@@ -1,7 +1,12 @@
 package pit2027;
 
-import java.util.Date;
+import org.json.JSONObject;
 
+/**
+ * Modela un vehículo con matrícula, categoría, año y disponibilidad.
+ * La matrícula debe ser única para cada vehículo.
+ * Vehiculo
+ */
 public abstract class Vehiculo {
 
     private String matricula;
@@ -33,6 +38,11 @@ public abstract class Vehiculo {
     
     public void setDisponible(boolean disponible) {
         this.disponible = disponible;
+    }
+
+    @Override 
+    public String toString() {
+        return new JSONObject(this).toString();
     }
 
 }
